@@ -27,22 +27,30 @@
   <button class="nav__burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
 </header>
 <div class="mobnav" id="mobNav">
+  <p class="mobnav__label">Where to?</p>
   <a href="index.html">Home</a>
   <a href="services.html">Services</a>
   <a href="portfolio.html">Portfolio</a>
   <a href="clients.html">Clients</a>
   <a href="about.html">About</a>
-  <a href="work-with-us.html">Work with us</a>
+  <a href="hosts.html">Our hosts</a>
+  <a href="work-with-us.html">Start a project</a>
+  <div class="mobnav__foot">
+    <a href="tel:+251905598956">+251 90 559 8956</a>
+    <a href="https://wa.me/251905598956?text=Hi%20Quill%20Communications%2C%20I%27d%20like%20to%20talk%20about%20a%20project." target="_blank" rel="noopener">WhatsApp us</a>
+    <span>Addis Ababa, Ethiopia</span>
+  </div>
 </div>
 <main>
 
   <section class="phero">
     <img class="hero__wm" src="assets/quill-logo.png" alt="" aria-hidden="true">
     <div class="phero__inner">
+      
       <div class="sec-head sec-head--onDark">
         <span class="sec-head__index">Work with us</span>
         <h1>Tell us what you need. We’ll ask the right follow-ups.</h1>
-        <p>Pick the services you’re after and the form adapts — no irrelevant questions, no 40-field monster. Submit and we follow up within 2 days. In a hurry? <a href="https://wa.me/251905598956?text=Hi%20Quill%20Communications%2C%20I%27d%20like%20to%20talk%20about%20a%20project." target="_blank" rel="noopener" style="color:#FF9729;font-weight:600">WhatsApp</a> or <a class="jsmail" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=Abrhamg.fetene@gmail.com&amp;su=Project%20inquiry%20%E2%80%94%20Quill%20Communications" target="_blank" rel="noopener" style="color:#FF9729;font-weight:600">email us</a> first.</p>
+        <p>Select the services you need and the form adapts, so there are no irrelevant questions and no forty-field questionnaire. Submit it and we follow up within two days. In a hurry? <a href="https://wa.me/251905598956?text=Hi%20Quill%20Communications%2C%20I%27d%20like%20to%20talk%20about%20a%20project." target="_blank" rel="noopener" style="color:#FF9729;font-weight:600">WhatsApp</a> or <a class="jsmail" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=Abrhamg.fetene@gmail.com&amp;su=Project%20inquiry%20%E2%80%94%20Quill%20Communications" target="_blank" rel="noopener" style="color:#FF9729;font-weight:600">email us</a> first.</p>
       </div>
     </div>
   </section>
@@ -56,7 +64,7 @@
     <div class="wform__steps">
       <div class="fstep is-on">
         <h2>What do you need?</h2>
-        <p class="hint">Pick as many as apply — the next step changes based on what you choose.</p>
+        <p class="hint">Select as many as apply. The next step changes based on what you choose.</p>
         <div class="svc-picks">
         <label class="pick" data-svc="content"><svg class="feather" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z" stroke="#E4790C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 8L2 22" stroke="#E4790C" stroke-width="1.8" stroke-linecap="round"/><path d="M17.5 15H9" stroke="#E4790C" stroke-width="1.8" stroke-linecap="round"/></svg><span>Content Creation</span><span class="tick"></span></label>
         <label class="pick" data-svc="video"><svg class="feather" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z" stroke="#E4790C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 8L2 22" stroke="#E4790C" stroke-width="1.8" stroke-linecap="round"/><path d="M17.5 15H9" stroke="#E4790C" stroke-width="1.8" stroke-linecap="round"/></svg><span>Video Production</span><span class="tick"></span></label>
@@ -74,7 +82,7 @@
 
       <div class="fstep">
         <h2>A few specifics</h2>
-        <p class="hint">Answer what you can — “not sure” is a perfectly good answer.</p>
+        <p class="hint">Answer what you can. “Not sure” is a perfectly good answer.</p>
         <div id="qHost"></div>
       </div>
 
@@ -94,11 +102,11 @@
             <label class="qlab">Want us to call you?</label>
             <div class="optrow">
               <button type="button" class="opt" data-call="yes">Yes, call me</button>
-              <button type="button" class="opt" data-call="no">No — email/WhatsApp is fine</button>
+              <button type="button" class="opt" data-call="no">No, email or WhatsApp is fine</button>
             </div>
           </div>
           <div class="q" id="callOpts" style="display:none">
-            <label class="qlab">When suits you? (Ethiopian time — pick any that work)</label>
+            <label class="qlab">When suits you? (Ethiopian time, select any that work)</label>
             <div class="optrow">
               <button type="button" class="opt">Weekday morning (9–12)</button>
               <button type="button" class="opt">Weekday afternoon (1–5)</button>
@@ -120,8 +128,8 @@
 
     <div class="fdone" id="fDone" style="display:none">
       <div class="fdone__tick">✓</div>
-      <h2>Got it. We’ll follow up within 2 days.</h2>
-      <p>Can’t wait that long? <a href="https://wa.me/251905598956?text=Hi%20Quill%20Communications%2C%20I%27d%20like%20to%20talk%20about%20a%20project." target="_blank" rel="noopener" style="color:var(--orange-deep);font-weight:600">WhatsApp us</a> and we’ll pick it up from there.</p>
+      <h2>Received. We will follow up within two days.</h2>
+      <p>Cannot wait that long? <a href="https://wa.me/251905598956?text=Hi%20Quill%20Communications%2C%20I%27d%20like%20to%20talk%20about%20a%20project." target="_blank" rel="noopener" style="color:var(--orange-deep);font-weight:600">WhatsApp us</a> and we will pick it up from there.</p>
     </div>
   </form>
 </main>

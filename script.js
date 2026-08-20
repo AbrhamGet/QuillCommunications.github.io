@@ -159,8 +159,21 @@ document.addEventListener('DOMContentLoaded', function () {
   var burger = document.getElementById('navBurger'), mobNav = document.getElementById('mobNav');
   if (burger && mobNav) {
     burger.addEventListener('click', function () {
-      burger.classList.toggle('is-open');
-      mobNav.classList.toggle('is-open');
+      var open = burger.classList.toggle('is-open');
+      mobNav.classList.toggle('is-open', open);
+      document.body.classList.toggle('mobnav-open', open);
+    });
+    mobNav.addEventListener('click', function (e) {
+      if (!e.target.closest('a')) return;
+      burger.classList.remove('is-open');
+      mobNav.classList.remove('is-open');
+      document.body.classList.remove('mobnav-open');
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'Escape' || !mobNav.classList.contains('is-open')) return;
+      burger.classList.remove('is-open');
+      mobNav.classList.remove('is-open');
+      document.body.classList.remove('mobnav-open');
     });
   }
 
@@ -238,7 +251,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* Lightbox for galleries + brandbook */
-  var zoomables = document.querySelectorAll('.gal img, .bbpages img');
+  var zoomables = document.querySelectorAll('.gal img, .mosaic img, .bbpages img');
   if (zoomables.length) {
     var srcs = Array.prototype.map.call(zoomables, function (i) { return i.getAttribute('src'); });
     var box = document.createElement('div');
