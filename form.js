@@ -31,9 +31,14 @@ document.addEventListener('DOMContentLoaded', function () {
       { key: 'script', label: 'Where does the concept stand?', opts: ['Script ready', 'Rough idea', 'Need it from scratch'] },
       { key: 'airing', label: 'Where will it air?', opts: ['TV', 'YouTube / digital', 'Both'] }
     ]},
+    design: { name: 'Graphics Design & Branding', qs: [
+      { key: 'scope', label: 'What do you need designed?', opts: ['Campaign creative / posts', 'Logo or full identity', 'Brand book', 'Print / proposal documents'], multi: true },
+      { key: 'existing', label: 'Do you have a brand identity already?', opts: ['Yes, and we follow it', 'Yes, but it needs work', 'No \u2014 starting fresh'] }
+    ]},
     smm: { name: 'Social Media Management', qs: [
       { key: 'package', label: 'Which package are you leaning toward?', opts: ['Standard (50,000 birr)', 'Growth (70,000 birr)', 'Gold (110,000 birr)', 'Not sure yet'] },
-      { key: 'platforms', label: 'Which platforms matter most?', opts: ['TikTok', 'Instagram', 'Facebook', 'Telegram', 'All of them'], multi: true }
+      { key: 'platforms', label: 'Which platforms matter most?', opts: ['TikTok', 'Instagram', 'Facebook', 'Telegram', 'All of them'], multi: true },
+      { key: 'host', label: 'A host is included \u2014 seen the roster?', opts: ['I have someone in mind', 'Recommend one for us', 'Still deciding'], note: 'hosts' }
     ]},
     ads: { name: 'Ad Running & Optimization', qs: [
       { key: 'platforms', label: 'Where should the ads run?', opts: ['Meta (Facebook/Instagram)', 'Google', 'Both'] },
@@ -110,6 +115,13 @@ document.addEventListener('DOMContentLoaded', function () {
           row.appendChild(o);
         });
         qd.appendChild(row);
+        if (q.note === 'hosts') {
+          var hint = document.createElement('p');
+          hint.className = 'wform__note';
+          hint.style.marginTop = '10px';
+          hint.innerHTML = '<a href="hosts.html" target="_blank" rel="noopener">See all our hosts \u2192</a>';
+          qd.appendChild(hint);
+        }
         g.appendChild(qd);
       });
       host.appendChild(g);

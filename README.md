@@ -1,42 +1,77 @@
-# Quill Communications — Full Agency Website
+# Quill Communications — Website (v2)
 
-## What's in the folder
-| File | What it is |
-|---|---|
-| index.html | Home — hero with TVC, marquee, services teaser, results, featured work, testimonials, team marquee, contact box |
-| services.html | All 10 services in depth + the 3 SMM packages |
-| portfolio.html | Flagship Popular Electronics case + full case library + behind-the-scenes videos |
-| clients.html | Active client hub — strategy per account, page links, snapshots |
-| about.html | Philosophy, process, the team of 8, worked-with wall |
-| work-with-us.html | The adaptive project form |
-| styles.css / script.js / form.js | Shared styling and interactions |
-| media/ | The 3 behind-the-scenes videos (must be uploaded too!) |
+## Fastest install: the zip
 
-## Upload (GitHub Pages)
-1. Create a new **public** repo (suggested name: `quill`).
-2. Upload **everything in this folder, including the `media` folder** —
-   on github.com you can drag the whole folder contents into "Add file → Upload files."
-3. Settings → Pages → Deploy from branch → main → / (root) → Save.
-4. Live at `https://YOURUSERNAME.github.io/quill` in a minute or two.
-   (Or make a dedicated account, name the repo `quillcommunications.github.io`,
-   and it lives at that root address instead.)
+1. Download `quill-site.zip` and unzip it. You'll get a folder containing
+   19 HTML pages, 3 script/style files, `favicon.ico`, and two folders
+   (`assets/` and `media/`).
+2. Go to your repo on github.com → **Add file → Upload files**.
+3. Open the unzipped folder, select **everything inside it** (Ctrl+A / Cmd+A)
+   — including the `assets` and `media` folders — and drag it all into the
+   upload box in one go. GitHub keeps the folder structure automatically.
+4. Scroll down, click **Commit changes**.
+5. Wait 1–2 minutes, then hard-refresh the site (Ctrl+Shift+R, or an
+   incognito tab on mobile).
 
-## ONE thing to finish: the form endpoint
-Right now the contact box and project form fall back to opening a pre-filled
-Gmail window. To make them send silently to your inbox:
-1. In your Formspree dashboard, create a form (any name). Copy its endpoint —
-   it looks like `https://formspree.io/f/abcdwxyz`.
-2. Open **script.js**, line near the top:
-   `window.FORM_ENDPOINT = "";`
-   Paste the URL between the quotes. Done — both forms now deliver to
-   Abrhamg.fetene@gmail.com through Formspree.
+Do NOT drag the outer folder itself — drag the contents. Otherwise everything
+lands one level too deep and the site breaks.
 
-## Adding the missing client page links
-In **clients.html**, search for `ADD LINKS` — each active client without
-social links has a marked comment where buttons go. Copy the pattern used
-in the Popular Electronics block.
+## What the structure must look like
 
-## Publishing client report numbers later
-Each client block on clients.html has a "Performance snapshot" area that
-currently says "Full report coming soon." When you have numbers, copy the
-snapshot markup from the Popular Electronics block and swap the figures.
+```
+your-repo/
+├── (19 .html files)
+├── styles.css
+├── script.js
+├── form.js
+├── favicon.ico
+├── assets/     ← 105 images
+└── media/      ← 3 behind-the-scenes videos
+```
+
+If `assets/` is missing or renamed, every image breaks.
+
+## What's in v2
+
+**Graphics Design & Branding** added as an 11th service everywhere — homepage,
+services page, and the project form with its own follow-up questions.
+
+**Services page, two levels:** tap a service to expand a panel with a short
+description and a "See full details" button, which opens that service's own
+page. One panel open at a time.
+
+**11 service detail pages** with process, software logos, and real content:
+- Video Production — gear list, three crew roles with icons, editing software, showreels
+- TVC — six-stage process on a scroll-driven timeline, FX6 equipment list, the Vimeo TVC
+- Graphics Design — six design samples in a click-to-enlarge gallery, link to the brand book
+- Content Creation — the Content Playbook principles and the measurement loop
+- Social Media Management — ten-step strategy process, hosts link, the three packages
+- Event Documentation — seven Strictly Soul photos, format options
+- Influencer Marketing — the creator network with live links
+- Website Development — all seven sites you've built, clickable
+- Plus Ads, Community Management, and SEO
+
+**hosts.html** — all 12 hosts with photos, descriptions, and previous-work
+links. Reachable from the SMM page, About, the footer, and inside the form
+when someone picks Social Media Management. Deliberately not in the top nav.
+
+**brandbook.html** — the full 31-page Evolve brand book, click any page to
+enlarge, arrow keys to move through.
+
+**About** — "How we work" rebuilt: centred, four icon cards with ghost
+numbers, each lighting up in sequence as you scroll.
+
+**Clients** — every block carries that brand's own colour as a gradient
+washing left to right into white.
+
+**Mobile** — WhatsApp and "Start a project" no longer overlap, a hamburger
+menu replaces the hidden nav, and email links open the phone's mail app with
+the address and subject prefilled instead of the browser.
+
+**Favicon** — the orange Quill "Q" on navy, in the browser tab and as the
+icon if anyone saves the site to a phone home screen.
+
+## Formspree
+Already wired (`window.FORM_ENDPOINT` at the top of script.js). The first
+submission triggers a one-time confirmation email to your Gmail — confirm it
+once and everything after flows silently.
